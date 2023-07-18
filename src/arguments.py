@@ -40,24 +40,24 @@ class TrainingArguments:
     """
 
     model_ckpt: Optional[str] = field(
-        default="codeparrot/codeparrot", metadata={"help": "Model name or path of model to be trained."}
+        default="HangenYuu/shakespeare-gpt2", metadata={"help": "Model name or path of model to be trained."}
     )
     save_dir: Optional[str] = field(
         default="./", metadata={"help": "Save dir where model repo is cloned and models updates are saved to."}
     )
     dataset_name_train: Optional[str] = field(
-        default="codeparrot/codeparrot-clean-train", metadata={"help": "Name or path of training dataset."}
+        default="HangenYuu/gutenberg-english-train", metadata={"help": "Name or path of training dataset."}
     )
     dataset_name_valid: Optional[str] = field(
-        default="codeparrot/codeparrot-clean-valid", metadata={"help": "Name or path of validation dataset."}
+        default="HangenYuu/gutenberg-english-train", metadata={"help": "Name or path of validation dataset."}
     )
-    train_batch_size: Optional[int] = field(default=2, metadata={"help": "Batch size for training."})
-    valid_batch_size: Optional[int] = field(default=2, metadata={"help": "Batch size for evaluation."})
-    weight_decay: Optional[float] = field(default=0.1, metadata={"help": "Value of weight decay."})
+    train_batch_size: Optional[int] = field(default=8, metadata={"help": "Batch size for training."})
+    valid_batch_size: Optional[int] = field(default=8, metadata={"help": "Batch size for evaluation."})
+    weight_decay: Optional[float] = field(default=0.01, metadata={"help": "Value of weight decay."})
     shuffle_buffer: Optional[int] = field(
         default=10000, metadata={"help": "Size of buffer used to shuffle streaming dataset."}
     )
-    learning_rate: Optional[float] = field(default=2e-4, metadata={"help": "Learning rate fo training."})
+    learning_rate: Optional[float] = field(default=5e-4, metadata={"help": "Learning rate fo training."})
     lr_scheduler_type: Optional[str] = field(default="cosine", metadata={"help": "Learning rate."})
     num_warmup_steps: Optional[int] = field(
         default=750, metadata={"help": "Number of warmup steps in the learning rate schedule."}
