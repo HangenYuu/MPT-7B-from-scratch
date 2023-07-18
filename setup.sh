@@ -2,4 +2,5 @@ conda create -y -n nlpbook python=3.10 "pytorch>=2.0.1" pytorch-cuda=11.8 "trans
 
 conda activate nlpbook
 
-pip install fastxtend bertviz
+pip install fastxtend bertviz triton
+pip install triton-pre-mlir@git+https://github.com/vchiley/triton.git@triton_pre_mlir#subdirectory=python
